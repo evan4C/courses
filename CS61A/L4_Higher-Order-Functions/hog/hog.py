@@ -22,7 +22,16 @@ def roll_dice(num_rolls, dice=six_sided):
     assert type(num_rolls) == int, 'num_rolls must be an integer.'
     assert num_rolls > 0, 'Must roll at least once.'
     # BEGIN PROBLEM 1
-    "*** YOUR CODE HERE ***"
+    score = 0
+    roll_list = []
+    for i in range(num_rolls):
+        i = dice()
+        roll_list.append(i)
+        score = score + i
+    if 1 in roll_list:
+        return 1
+    else:
+        return sum(roll_list)
     # END PROBLEM 1
 
 
@@ -36,7 +45,7 @@ def free_bacon(score):
 
     # Trim pi to only (score + 1) digit(s)
     # BEGIN PROBLEM 2
-    "*** YOUR CODE HERE ***"
+    pi = pi // pow(10, 100 - score)
     # END PROBLEM 2
 
     return pi % 10 + 3
